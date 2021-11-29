@@ -1,0 +1,57 @@
+import styled from "styled-components";
+
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);
+  border-radius: 6px;
+  background-color: #fff;
+  margin-bottom: 8px;
+  margin-right: auto;
+  padding: 0 20px;
+
+  &:hover {
+    box-shadow: 0px 20px 25px rgba(176, 177, 181, 0.432802);
+  }
+
+  & > div {
+    flex: 1;
+  }
+`;
+
+Container.Title = styled.div`
+  display: flex;
+  align-items: center;
+
+  .title {
+    margin-left: 28px;
+  }
+`;
+
+Container.Categoriy = styled.div``;
+
+Container.Price = styled.div``;
+
+Container.Additional = styled.div``;
+
+export const ActionContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);
+  border: 4px solid #edeff3;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:first-child {
+    margin-right: 24px;
+  }
+`;

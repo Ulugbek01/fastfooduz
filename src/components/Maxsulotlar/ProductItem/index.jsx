@@ -1,0 +1,40 @@
+import React,{useState} from 'react'
+import {productItemInfo} from '../../../utils/productItemInfo';
+import { ActionContainer, Container, IconWrapper } from './style';
+
+const ProductItem = (props) => {
+    const [data, setData] = useState(productItemInfo);
+    return (
+        <div>
+            {data.map((value) => {
+                const {edit: Edit, delete: Delete} = value;
+
+                const onDelete = (id)=> {
+                    const newData = data.filter((value) => value.id !== id);
+                    setData(newData);
+                }
+                return (
+                    <Container key={value.id}>
+                        <Container.Title>
+                            <img src={value.url} alt="product-img" />
+                            <p className='title'>{value.title}</p>
+                        </Container.Title>
+                        <Container.Categoriy>{value.categoriy}</Container.Categoriy>
+                        <Container.Price>{value.price}</Container.Price>
+                        <Container.Additional>{value.additional}</Container.Additional>
+                        <ActionContainer>
+                            <IconWrapper>
+                                <Edit/>
+                            </IconWrapper>
+                            <IconWrapper onClick={()=> onDelete(value.id)}>
+                                <Delete/>
+                            </IconWrapper>
+                        </ActionContainer>
+                    </Container>
+                )
+            })}
+        </div>
+    )
+}
+
+export default ProductItem;
