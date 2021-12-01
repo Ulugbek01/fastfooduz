@@ -17,8 +17,10 @@ import {ReactComponent as Check} from '../../assets/icons/check.svg';
 const Buyurtmalar = () => {
 const [card, setCard] = useState(cardInfo);
 const [active, setActive] = useState('Yangi')
+const [toggle, setToggle] = useState(true);
 const onData = ()=> {
-    
+    console.log(toggle);
+    setToggle(!toggle);
 }
     return (
         <Container>
@@ -47,11 +49,11 @@ const onData = ()=> {
                </FilterContainer>
                <FilterContainerRight>
                     <FilterButtonContainer>
-                        <FilterButtonWrapper><Filter/></FilterButtonWrapper>
+                        <FilterButtonWrapper isActive={toggle} onClick={onData}><Filter/></FilterButtonWrapper>
                         <FilterButtonWrapper onClick={onData}>
                             <div className='v-icons'>
                                 <Rectangle1/>
-                                <Rectangle2/>
+                                <Rectangle2/>                                                                                                                                                                                                                         
                             </div>
                         </FilterButtonWrapper>
                     </FilterButtonContainer>

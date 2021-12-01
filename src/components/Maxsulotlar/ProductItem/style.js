@@ -1,8 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+const display_flex = css`
   display: flex;
   align-items: center;
+`;
+
+export const Container = styled.div`
+  ${display_flex};
   height: 60px;
   box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);
   border-radius: 6px;
@@ -21,8 +25,7 @@ export const Container = styled.div`
 `;
 
 Container.Title = styled.div`
-  display: flex;
-  align-items: center;
+  ${display_flex};
 
   .title {
     margin-left: 28px;
@@ -36,8 +39,8 @@ Container.Price = styled.div``;
 Container.Additional = styled.div``;
 
 export const ActionContainer = styled.div`
-  display: flex;
-  align-items: center;
+  ${display_flex};
+  justify-content: center;
 `;
 
 export const IconWrapper = styled.div`

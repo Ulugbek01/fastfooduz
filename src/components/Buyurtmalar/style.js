@@ -266,7 +266,8 @@ export const FilterButtonWrapper = styled.div`
   justify-content: center;
   width: 36px;
   height: 36px;
-  background-color: #fff;
+  background-color: ${({ isActive }) =>
+    isActive === true ? "#fff" : "#EDEFF3"};
   border-radius: 18px;
   cursor: pointer;
 

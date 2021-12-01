@@ -17,12 +17,11 @@ const Sidebar = () => {
                     <LogoDiscription>Online maxsulot sotuvi</LogoDiscription>
                 </LogoContainer.InfoWrapper>
             </LogoContainer>
-
             {sidebar.map(({id, title, icon:Icon, pathname}) => {
                 return (
                     <NavLink className={`nav-item ${({isActive}) => isActive ? 'active': 'noActive'}`} key={id} to={pathname}>
                     <IconWrapper>
-                        <Icon/>
+                        <Icon className='icon' />
                     </IconWrapper>
                     {title}
                     </NavLink>

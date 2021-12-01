@@ -1,6 +1,8 @@
 import Generic from "../pages/Generic";
 import Maxsulotlar from "../components/Maxsulotlar";
 import Buyurtmalar from "../components/Buyurtmalar";
+import Kategoriyalar from "../components/Kategoriyalar";
+
 import { ReactComponent as check } from "../assets/icons/check-circle.svg";
 import { ReactComponent as archive } from "../assets/icons/archive.svg";
 import { ReactComponent as layers } from "../assets/icons/layers.svg";
@@ -33,7 +35,7 @@ export const sidebar = [
     icon: layers,
     title: "Kategoriyalar",
     pathname: "/Kategoriyalar",
-    component: Generic,
+    component: Kategoriyalar,
     child: [],
     hidden: false,
   },

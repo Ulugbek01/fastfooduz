@@ -7,7 +7,6 @@ const display_flex = css`
 
 export const Container = styled.div`
   ${display_flex};
-  margin-bottom: 20px;
 `;
 
 export const AddProductWrapper = styled.div`
