@@ -2,6 +2,7 @@ import Generic from "../pages/Generic";
 import Maxsulotlar from "../components/Maxsulotlar";
 import Buyurtmalar from "../components/Buyurtmalar";
 import Kategoriyalar from "../components/Kategoriyalar";
+import Filiallar from "../components/Filiallar";
 
 import { ReactComponent as check } from "../assets/icons/check-circle.svg";
 import { ReactComponent as archive } from "../assets/icons/archive.svg";
@@ -44,7 +45,7 @@ export const sidebar = [
     icon: map,
     title: "Filiallar",
     pathname: "/Filiallar",
-    component: Generic,
+    component: Filiallar,
     child: [],
     hidden: false,
   },

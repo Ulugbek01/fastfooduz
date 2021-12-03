@@ -14,6 +14,7 @@ export const Container = styled.div`
 
   .warning-info {
     margin-top: 80px;
+    color: #ffc107;
   }
 
   .loading-btn {
