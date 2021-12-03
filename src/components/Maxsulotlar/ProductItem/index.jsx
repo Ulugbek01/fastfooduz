@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {productItemInfo} from '../../../utils/productItemInfo';
-import { ActionContainer, Container, IconWrapper } from './style';
+import { ActionContainer, Container, IconWrapper, LoadingButton } from './style';
 
 const ProductItem = (props) => {
     const [data, setData] = useState(productItemInfo);
@@ -33,6 +33,7 @@ const ProductItem = (props) => {
                     </Container>
                 )
             })}
+            <LoadingButton onClick={()=> setData(productItemInfo)}>Qayta yuklash</LoadingButton>
         </div>
     )
 }

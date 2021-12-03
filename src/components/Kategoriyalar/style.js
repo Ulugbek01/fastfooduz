@@ -62,14 +62,16 @@ export const Container = styled.div`
   }
 `;
 
+/* Navbar styles */
 export const Navbar = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 40px;
   background-color: #fff;
   box-shadow: 0px 3px 6px rgba(141, 155, 168, 0.35895);
   margin: 20px 0;
+  padding: 0 40px;
 
   h3 {
     text-transform: uppercase;
@@ -92,7 +94,7 @@ export const CategoryItem = styled.div`
   box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);
   border-radius: 6px;
   margin-bottom: 8px;
-  padding: 0 20px;
+  padding: 0 40px 0 20px;
 
   &:hover {
     box-shadow: 0px 20px 25px rgba(176, 177, 181, 0.432802);

@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductItem from './ProductItem';
 import Header from '../Header';
-import { Container, LoadingButton, ProductItemsContainer } from './style';
+import { Container, ProductItemsContainer } from './style';
 import Navbar from '../Navbar';
 
 const Maxsulotlar = () => {
@@ -11,7 +11,6 @@ const Maxsulotlar = () => {
             <Navbar/>
             <ProductItemsContainer>
                 <ProductItem/>
-                <LoadingButton>Yana yuklash</LoadingButton>
             </ProductItemsContainer>
         </Container>
     )

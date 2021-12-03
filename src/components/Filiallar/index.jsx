@@ -42,9 +42,13 @@ const Filiallar = () => {
                         </BranchItemWrapper>
                     )
                 }
-                ): <BranchItemWrapper>
-                        <p className='warning-info'>Ma'lumot yo'q</p>
-                    </BranchItemWrapper>}
+                ): <div className='loading-wrapper'>
+                        <BranchItemWrapper>
+                            <p className='warning-info'>Ma'lumot yo'q</p>
+                        </BranchItemWrapper>
+                        <button className='loading-btn'>Qayta yuklash</button>
+                    </div>
+                }
             </Container>
         </MainContainer>
     )
