@@ -11,10 +11,7 @@ const Kategoriyalar = () => {
         let newData = data.filter((value)=> value.id !== id);
         setData(newData);
     }
-    
-    const showData = () => {
-        
-    }
+
     return (
         <MainContainer>
             <Header/>
@@ -45,7 +42,7 @@ const Kategoriyalar = () => {
                 }) : <Container className='no-data'>
                         <p className='warning-info'>Ma'lumot yo'q</p>
                         <img src={angry_face} alt="angry-face" /><br />
-                        <button onClick={showData} className='loading-btn'>Qayta yuklash</button>
+                        <button onClick={()=> setData(categoryInfo)} className='loading-btn'>Qayta yuklash</button>
                      </Container>}
             </Container>
         </MainContainer>

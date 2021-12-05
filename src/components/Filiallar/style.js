@@ -18,8 +18,7 @@ export const Container = styled.div`
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
     color: #fff;
     cursor: pointer;
-    min-height: 3rem;
-    padding: 0 20px;
+    padding: 10px 20px;
     margin: 30px auto;
     transition: all 250ms;
   }

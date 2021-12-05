@@ -46,7 +46,7 @@ const Filiallar = () => {
                         <BranchItemWrapper>
                             <p className='warning-info'>Ma'lumot yo'q</p>
                         </BranchItemWrapper>
-                        <button className='loading-btn'>Qayta yuklash</button>
+                        <button className='loading-btn' onClick={()=> setData(branchInfo)}>Qayta yuklash</button>
                     </div>
                 }
             </Container>
