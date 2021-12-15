@@ -2,13 +2,12 @@ import React,{useState} from 'react'
 import {productItemInfo} from '../../../utils/productItemInfo';
 import { ActionContainer, Container, IconWrapper, LoadingButton } from './style';
 
-const ProductItem = (props) => {
+const ProductItem = () => {
     const [data, setData] = useState(productItemInfo);
     return (
         <div>
             {data.map((value) => {
-                const {edit: Edit, delete: Delete} = value;
-
+                const {edit: Edit, delete: Delete} = value; 
                 const onDelete = (id)=> {
                     const newData = data.filter((value) => value.id !== id);
                     setData(newData);

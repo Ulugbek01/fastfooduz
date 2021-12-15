@@ -66,12 +66,12 @@ export const Container = styled.div`
 export const Navbar = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   height: 40px;
   background-color: #fff;
   box-shadow: 0px 3px 6px rgba(141, 155, 168, 0.35895);
   margin: 20px 0;
-  padding: 0 40px;
+  padding-left: 40px;
 
   h3 {
     text-transform: uppercase;
@@ -79,6 +79,7 @@ export const Navbar = styled.div`
     border-left: 1px solid;
     border-color: rgba(141, 155, 168, 0.4);
     padding-left: 12px;
+    flex-grow: 1;
   }
 
   h3:first-child {

@@ -81,7 +81,7 @@ export const cardInfo = {
       time: new Date(),
       total: "77,409 UZS",
       user: {
-        name: "Gulbashakar Gulshakar",
+        name: "Michael Lawson",
         phone: "(+99 893) 461-41-88",
       },
       operator: {
@@ -119,7 +119,7 @@ export const cardInfo = {
       time: new Date(),
       total: "40,419 UZS",
       user: {
-        name: "Gulbashakar Gulshakar",
+        name: "Lindsay Ferguson",
         phone: "(+99 893) 461-41-88",
       },
       operator: {
@@ -140,7 +140,7 @@ export const cardInfo = {
       time: new Date(),
       total: "40,400 UZS",
       user: {
-        name: "Gulbashakar Gulshakar",
+        name: "Byron Fields",
         phone: "(+99 893) 461-41-88",
       },
       operator: {
@@ -158,7 +158,7 @@ export const cardInfo = {
       time: new Date(),
       total: "40,402 UZS",
       user: {
-        name: "Gulbashakar Joe",
+        name: "George Edwards",
         phone: "(+99 893) 461-41-88",
       },
       operator: {

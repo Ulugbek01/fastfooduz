@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { AddProductWrapper, CardContainer, CardsContainer, CheckButtonWrapper, CloseButtonWrapper, Container, FilterButtonContainer, FilterButtonWrapper, FilterContainer, FilterContainerRight, HeaderContainer, IconWrapper } from './style';
+import { AddProductWrapper, CardContainer, CardContainerV, CardsContainer, CheckButtonWrapper, CloseButtonWrapper, Container, FilterButtonContainer, FilterButtonWrapper, FilterContainer, FilterContainerRight, HeaderContainer, IconWrapper } from './style';
 import {cardInfo} from '../../mock/cardInfo';
 import { ReactComponent as Plus } from '../../assets/icons/plus.svg';
 import {ReactComponent as Filter} from '../../assets/icons/Group 2.svg';
@@ -19,7 +19,6 @@ const [card, setCard] = useState(cardInfo);
 const [active, setActive] = useState('Yangi')
 const [toggle, setToggle] = useState(true);
 const onData = ()=> {
-    console.log(toggle);
     setToggle(!toggle);
 }
     return (
@@ -49,8 +48,8 @@ const onData = ()=> {
                </FilterContainer>
                <FilterContainerRight>
                     <FilterButtonContainer>
-                        <FilterButtonWrapper isActive={toggle} onClick={onData}><Filter/></FilterButtonWrapper>
-                        <FilterButtonWrapper onClick={onData}>
+                        <FilterButtonWrapper onClick={onData} isActive={toggle}><Filter/></FilterButtonWrapper>
+                        <FilterButtonWrapper onClick={onData} isActive={!toggle}>
                             <div className='v-icons'>
                                 <Rectangle1/>
                                 <Rectangle2/>                                                                                                                                                                                                                         
@@ -59,11 +58,15 @@ const onData = ()=> {
                     </FilterButtonContainer>
                </FilterContainerRight>
             </HeaderContainer>
-            {Object.entries(card).map(([name, data]) => {
+            {toggle ? Object.entries(card).map(([name, data]) => {
+
+                const activeData = data.filter((value) => value.categoria.toLowerCase() === active.toLowerCase());
                 const onDelete = (id)=> {
-                    let newData = data.filter((value) => value.id !== id);
+                    const newData = activeData.filter((value) => value.id !== id );
+                    // console.log(activeData);
                     setCard(newData);
-                }   
+                }
+
                  return(
                     <CardsContainer key={name}>
                         { data.filter((item)=> item.categoria.toLowerCase() === active.toLowerCase()).map((value) => (
@@ -123,8 +126,74 @@ const onData = ()=> {
                         ))}
                 </CardsContainer>
                 );
-            })}            
+            }) :<CardContainerV>
+                        {Object.entries(card).map(([name, data]) => (
+                            <CardContainerV.Column key={name}>
+                                    {data.map((value) => (
+                                        <CardContainerV.Column.Card key={value.id}>
+                                            <div className='card-header'>
+                                                <div className='card-header__number'>
+                                                    <span className='number-container'>8549</span>
+                                                    <span className='icon-container'>
+                                                        <Path className='icon'/>
+                                                    </span>
+                                                </div>
+                                                <div className='card-header__date'>
+                                                        <Clock className='clock'/>
+                                                    <div>{value.time.getHours()}:{value.time.getMinutes()}</div>
+                                                </div>
+                                            </div>
+
+                                            <div className='user-info'>
+                                                <div className='user'>
+                                                    <div>
+                                                        <User/>
+                                                    </div>
+                                                    <div className='user-contact_info'>
+                                                        <p className='name'>{value.user.name}</p>
+                                                        <a className='phone' href='tel:${value.user.phone}'>{value.user.phone}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className='total-value'>
+                                                <div>
+                                                    <p className='total_title'>Umumiy summa</p>
+                                                    <p className='total'>{value.total}</p>
+                                                </div>
+                                                <div>
+                                                    <span className='circle'></span>
+                                                    <span>Payme</span>
+                                                </div>
+                                            </div>    
+
+                                            <div className='operator-info'>
+                                                <div>
+                                                    <p className='title'>Operator:</p>
+                                                    <p className='name'>{value.operator.name}</p>
+                                                </div>
+                                                <div className='icon-wrapper'>
+                                                    <Close/>                    
+                                                </div>
+                                            </div>
+
+                                            <div className='branch-info'>
+                                                <div>
+                                                    <p className='title'>Filial:</p>
+                                                    <p className='name'>{value.filial.title}</p>
+                                                    <p className='location'>{value.filial.location}</p>
+                                                </div>
+                                                <div className='icon-wrapper'>
+                                                    <Check/>                    
+                                                </div>
+                                            </div>
+                                        </CardContainerV.Column.Card>
+                                    ))}
+                            </CardContainerV.Column>
+                        ))}
+                </CardContainerV>              
+            }       
         </Container>
-    )
+    )    
 }
 export default Buyurtmalar;
