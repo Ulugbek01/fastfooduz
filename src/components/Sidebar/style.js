@@ -15,7 +15,7 @@ export const Container = styled.div`
   .nav-item {
     ${display_flex}
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: #2d3a45;
     padding: 2px 0 2px 36px;
   }
@@ -33,7 +33,7 @@ export const Container = styled.div`
     ${display_flex}
     text-decoration: none;
     color: #2d3a45;
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 2px 0 2px 36px;
   }
 `;

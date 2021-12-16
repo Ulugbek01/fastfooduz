@@ -227,6 +227,7 @@ FilterContainer.ItemWrapper = styled.div`
   background-color: #edeff3;
   padding: 6px;
   border-radius: 24px;
+  opacity: ${({ disable }) => (disable ? "1" : "0.5")};
 `;
 
 FilterContainer.Item = styled.div`
@@ -238,7 +239,7 @@ FilterContainer.Item = styled.div`
   box-shadow: ${({ isActive }) =>
     isActive ? "0px 2px 2px rgba(174, 176, 181, 0.314986)" : "none"};
   border-radius: 18px;
-  cursor: pointer;
+  cursor: ${({ disable }) => (disable ? "pointer" : "default")};
   font-size: 14px;
   opacity: ${({ isActive }) => (isActive ? "1" : "0.5")};
 `;
@@ -279,6 +280,8 @@ export const FilterButtonWrapper = styled.div`
 export const CardContainerV = styled.div`
   display: flex;
   padding: 0 40px;
+  height: 100vh;
+  overflow-y: scroll;
 `;
 
 CardContainerV.Column = styled.div`
