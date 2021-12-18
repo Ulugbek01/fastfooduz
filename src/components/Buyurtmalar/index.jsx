@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { AddProductWrapper, CardContainer, CardContainerV, CardsContainer, CheckButtonWrapper, CloseButtonWrapper, Container, FilterButtonContainer, FilterButtonWrapper, FilterContainer, FilterContainerRight, HeaderContainer, IconWrapper } from './style';
+import { AddProductWrapper, CardContainer, CardContainerV, CardsContainer, CheckButtonWrapper, CloseButtonWrapper, Container, FilterButtonContainer, FilterButtonWrapper, FilterContainer, FilterContainerRight, HeaderContainer, IconWrapper, TitleContainer, TotalValue } from './style';
 import {cardInfo} from '../../mock/cardInfo';
 import { ReactComponent as Plus } from '../../assets/icons/plus.svg';
 import {ReactComponent as Filter} from '../../assets/icons/Group 2.svg';
@@ -19,6 +19,7 @@ const [card, setCard] = useState(cardInfo);
 const [cardV, setCardV] = useState(cardInfo);
 const [active, setActive] = useState('Yangi')
 const [toggle, setToggle] = useState(true);
+
 const onData = ()=> {
     setToggle(!toggle);
 }
@@ -59,8 +60,7 @@ const onData = ()=> {
                     </FilterButtonContainer>
                </FilterContainerRight>
             </HeaderContainer>
-            {toggle ? Object.entries(card).map(([name, data]) => {
-
+            {toggle ? Object.entries(card).map(([name, data]) => {   
                 const activeData = data.filter((value) => value.categoria.toLowerCase() === active.toLowerCase());
                 const onDelete = (id)=> {
                     const newData = activeData.filter((value) => value.id !== id );
@@ -127,7 +127,22 @@ const onData = ()=> {
                         ))}
                 </CardsContainer>
                 );
-            }) :<CardContainerV>
+            }) : <div>
+                    <TitleContainer>
+                        <div>Yangi <span className='items_length'>4</span></div>
+                        <div>Qabul qilingan <span className='items_length'>3</span></div>
+                        <div>Jo'natilgan <span className='items_length'>11</span></div>
+                        <div>Yopilgan <span className='items_length'>12</span></div>
+                    </TitleContainer>
+
+                    <TotalValue>
+                        <div><span className='circle-label' color={'#20D472'}></span> 12,230,000 UZS</div>
+                        <div><span className='circle-label' color={'#11ACFD'}></span> 12,230,000 UZS</div>
+                        <div><span className='circle-label' color={'#FCB600'}></span> 12,230,000 UZS</div>
+                        <div><span className='circle-label' color={'#8E007E'}></span> 12,230,000 UZS</div>
+                    </TotalValue>
+
+                    <CardContainerV>
                         {Object.entries(cardV).map(([name, data]) => (
                             <CardContainerV.Column key={name}>
                                     {data.map((value) => {
@@ -136,7 +151,7 @@ const onData = ()=> {
                                             setCardV(newDataV);
                                         }
                                         return(
-                                            <CardContainerV.Column.Card key={value.id}>
+                                            <CardContainerV.Column.Card key={value.id} distance={value.categoria}>
                                                 <div className='card-header'>
                                                     <div className='card-header__number'>
                                                         <span className='number-container'>8549</span>
@@ -198,7 +213,8 @@ const onData = ()=> {
                                     })}
                             </CardContainerV.Column>
                         ))}
-                </CardContainerV>              
+                </CardContainerV> 
+                </div>             
             }       
         </Container>
     )    

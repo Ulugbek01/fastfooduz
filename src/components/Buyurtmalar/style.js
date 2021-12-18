@@ -280,8 +280,66 @@ export const FilterButtonWrapper = styled.div`
 export const CardContainerV = styled.div`
   display: flex;
   padding: 0 40px;
-  height: 100vh;
-  overflow-y: scroll;
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  padding: 32px 40px 8px;
+
+  & > div {
+    ${display_flex};
+    flex: 1;
+    opacity: 0.7;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .items_length {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-left: 12px;
+  }
+`;
+
+const bgColorType = (bgColor) => {
+  switch (bgColor) {
+    case "#20D472":
+      return "#20D472";
+    case "#11ACFD":
+      return "#11ACFD";
+    case "#FCB600":
+      return "FCB600";
+    default:
+      return "#8E007E";
+  }
+};
+
+export const TotalValue = styled.div`
+  display: flex;
+  padding: 0 40px;
+
+  & > div {
+    height: 50px;
+    background: #ffffff;
+    box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);
+    border-radius: 6px;
+    margin-right: 14px;
+    ${display_flex};
+    justify-content: space-around;
+    font-weight: 700;
+    flex: 1;
+
+    .circle-label {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 7px;
+      background-color: ${({ color }) => bgColorType(color)};
+    }
+  }
 `;
 
 CardContainerV.Column = styled.div`
@@ -293,7 +351,9 @@ CardContainerV.Column.Card = styled.div`
   background-color: #fff;
   box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);
   border-radius: 6px;
-  margin: 8px 14px 0 0;
+  margin-top: 8px;
+  margin-right: ${({ distance }) =>
+    distance.toLowerCase() === "yopilgan" ? "0" : "14px"};
   &:hover {
     box-shadow: 0px 20px 25px rgba(176, 177, 181, 0.432802);
   }
