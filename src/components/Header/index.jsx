@@ -4,14 +4,14 @@ import { ReactComponent as Plus } from '../../assets/icons/plus.svg';
 import { ReactComponent as Search } from '../../assets/icons/search.svg';
 import { ReactComponent as Filter } from '../../assets/icons/filter.svg';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <Container>
             <AddProductWrapper>
                 <IconWrapper>
                     <Plus />
                 </IconWrapper>
-                <p className='title'>Yangi buyurtma <br /> qo’shish</p>
+                <p className='title'>{props.text}<br /> qo’shish</p>
             </AddProductWrapper>
             <SearchWrapper>
                 <div className='search-item_wrapper'>

@@ -304,8 +304,8 @@ export const TitleContainer = styled.div`
   }
 `;
 
-const bgColorType = (bgColor) => {
-  switch (bgColor) {
+const bgColorType = (color) => {
+  switch (color) {
     case "#20D472":
       return "#20D472";
     case "#11ACFD":
@@ -317,13 +317,24 @@ const bgColorType = (bgColor) => {
   }
 };
 
+const getSize = (fSize) => {
+  switch (fSize) {
+    case "16px":
+      return "16px";
+    case "20px":
+      return "20px";
+    default:
+      return "24px";
+  }
+};
+
 export const TotalValue = styled.div`
   display: flex;
   padding: 0 40px;
 
   & > div {
     height: 50px;
-    background: #ffffff;
+    background: #fff;
     box-shadow: 0px 2px 2px rgba(174, 176, 181, 0.314986);
     border-radius: 6px;
     margin-right: 14px;
@@ -339,6 +350,10 @@ export const TotalValue = styled.div`
       border-radius: 7px;
       background-color: ${({ color }) => bgColorType(color)};
     }
+  }
+
+  .total-value__item {
+    font-size: ${({ fSize }) => (fSize == "16px" ? "38px" : "12px")};
   }
 `;
 

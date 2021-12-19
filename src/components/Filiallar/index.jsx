@@ -11,7 +11,7 @@ const Filiallar = () => {
     }
     return (
         <MainContainer>
-            <Header/>
+            <Header text="Yangi filial"/>
             <Navbar>
                 <h3 className='nav-title'>Filial nomi (UZ)</h3>
                 <h3 className='nav-title'>Filial nomi (RU)</h3>

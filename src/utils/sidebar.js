@@ -3,6 +3,7 @@ import Maxsulotlar from "../components/Maxsulotlar";
 import Buyurtmalar from "../components/Buyurtmalar";
 import Kategoriyalar from "../components/Kategoriyalar";
 import Filiallar from "../components/Filiallar";
+import Mijozlar from "../components/Mijozlar";
 
 import { ReactComponent as check } from "../assets/icons/check-circle.svg";
 import { ReactComponent as archive } from "../assets/icons/archive.svg";
@@ -54,7 +55,7 @@ export const sidebar = [
     icon: users,
     title: "Mijozlar",
     pathname: "/Mijozlar",
-    component: Generic,
+    component: Mijozlar,
     child: [],
     hidden: false,
   },

@@ -7,7 +7,7 @@ import Navbar from '../Navbar';
 const Maxsulotlar = () => {
     return (
         <Container>
-            <Header/>
+            <Header text="Yangi maxsulot"/>
             <Navbar/>
             <ProductItemsContainer>
                 <ProductItem/>

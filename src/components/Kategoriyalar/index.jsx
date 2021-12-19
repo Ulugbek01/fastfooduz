@@ -14,7 +14,7 @@ const Kategoriyalar = () => {
 
     return (
         <MainContainer>
-            <Header/>
+            <Header text="Yangi kategoriya"/>
             <Navbar>
                 <h3>Kategoriya (Uz)</h3>
                 <h3>Kategoriya (Ru)</h3>

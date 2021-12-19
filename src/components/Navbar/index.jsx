@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavbarContainer } from './style';
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <NavbarContainer>
-            <NavbarContainer.Product className='nav-title'>Maxsulot</NavbarContainer.Product>
-            <NavbarContainer.Categoriy className='nav-title'>Kategoriya</NavbarContainer.Categoriy>
-            <NavbarContainer.Price className='nav-title'>Narxi</NavbarContainer.Price>
-            <NavbarContainer.Additional className='nav-title'>Qo'shimcha</NavbarContainer.Additional>
-            <NavbarContainer.Action className='nav-title'>Action</NavbarContainer.Action>
+            <NavbarContainer.Product className='nav-title'>{props.name}</NavbarContainer.Product>
+            <NavbarContainer.Categoriy className='nav-title'>{props.phone}</NavbarContainer.Categoriy>
+            <NavbarContainer.Price className='nav-title'>{props.ordersCount}</NavbarContainer.Price>
+            <NavbarContainer.Additional className='nav-title'>{props.status}</NavbarContainer.Additional>
+            <NavbarContainer.Action className='nav-title'>{props.action}</NavbarContainer.Action>
         </NavbarContainer>
     )
 }   
