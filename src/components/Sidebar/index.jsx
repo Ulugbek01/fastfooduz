@@ -6,6 +6,7 @@ import logo from '../../assets/imgs/main-logo.png';
 import {ReactComponent as LogOut} from '../../assets/icons/log-out.svg';
 
 const Sidebar = () => {
+    let sidebarLength = sidebar.length;
     return (
         <Container>
             <LogoContainer>
@@ -19,12 +20,16 @@ const Sidebar = () => {
             </LogoContainer>
             {sidebar.map(({id, title, icon:Icon, pathname}) => {
                 return (
-                    <NavLink className={`nav-item ${({isActive}) => isActive ? 'active': 'noActive'}`} key={id} to={pathname}>
-                    <IconWrapper>
-                        <Icon className='icon' />
-                    </IconWrapper>
-                    {title}
-                    </NavLink>
+                    <div style={{
+                        borderLeft: '4px solid #FCB600',
+                    }}>
+                        <NavLink className={`nav-item ${({isActive}) => isActive ? 'active': 'noActive'}`}  key={id} to={pathname}>
+                            <IconWrapper>
+                                <Icon className='icon' />
+                            </IconWrapper>
+                            {title}
+                        </NavLink>
+                    </div>
                 );
             })}
                 <NavLink to='/' className='log-out'>

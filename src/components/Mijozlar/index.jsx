@@ -1,15 +1,19 @@
 import React,{useState} from 'react'
 import Header from '../Header';
 import { customersInfo } from '../../utils/customersInfo';
-import { ButtonItem, CustomerItemWrapper, IconWrapper, MainContainer } from './style';
-import Navbar from '../Navbar';
-
+import { ButtonItem, CustomerItemWrapper, IconWrapper, MainContainer, NavbarContainer } from './style';
 const Mijozlar = () => {
     const [cusInfo, setCusInfo] = useState(customersInfo);
     return (
         <MainContainer>
             <Header text="Yangi mijoz"/>
-            <Navbar name="Mijoz ismi" phone="Telefon raqam" ordersCount="Buyurtmalar soni" status="Status" action="Action"/>
+            <NavbarContainer>
+                <NavbarContainer.Product className='nav-title'>Mijoz ismi</NavbarContainer.Product>
+                <NavbarContainer.Categoriy className='nav-title'>Telefon raqam</NavbarContainer.Categoriy>
+                <NavbarContainer.Price className='nav-title'>Buyurtmalar soni</NavbarContainer.Price>
+                <NavbarContainer.Additional className='nav-title'>Status</NavbarContainer.Additional>
+                <NavbarContainer.Action className='nav-title'>Action</NavbarContainer.Action>
+            </NavbarContainer>
             {cusInfo.map((item) =>{
                  const {edit: Edit, delete: Delete, slash: Slash, check: Check} = item;
                  const onDelete = (id)=> {

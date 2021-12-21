@@ -5,6 +5,41 @@ const display_flex = css`
   align-items: center;
 `;
 
+/* Navbar styles */
+export const NavbarContainer = styled.div`
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #fff;
+  margin: 20px 0;
+  box-shadow: 0px 3px 6px rgba(141, 155, 168, 0.35895);
+  padding-left: 40px;
+
+  .nav-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    flex: 1;
+    border-left: 1px solid;
+    border-color: rgba(141, 155, 168, 0.4);
+    padding-left: 12px;
+  }
+
+  .nav-title:nth-child(4) {
+    padding-right: 40px;
+  }
+
+  .nav-title:first-child {
+    border-left: none;
+  }
+`;
+
+NavbarContainer.Product = styled.h3``;
+NavbarContainer.Categoriy = styled.h3``;
+NavbarContainer.Price = styled.h3``;
+NavbarContainer.Additional = styled.h3``;
+NavbarContainer.Action = styled.h3``;
+
+/* Main Section styles */
 export const MainContainer = styled.div`
   width: 100%;
 `;

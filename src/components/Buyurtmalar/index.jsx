@@ -136,10 +136,10 @@ const Buyurtmalar = () => {
                 </TitleContainer>
 
                 <TotalValue>
-                    <div className='total-value__item' fSize="14px" ><span className='circle-label' color={'#20D472'}></span> 12,230,000 UZS</div>
-                    <div className='total-value__item' fSize="16px" ><span className='circle-label' color={'#11ACFD'}></span> 12,230,000 UZS</div>
-                    <div className='total-value__item' fSize="20px" ><span className='circle-label' color={'#FCB600'}></span> 12,230,000 UZS</div>
-                    <div className='total-value__item' fSize="24px" ><span className='circle-label' color={'#8E007E'}></span> 12,230,000 UZS</div>
+                    <div className='total-value__item'><span className='circle-label' color={'#20D472'}></span> 12,230,000 UZS</div>
+                    <div className='total-value__item'><span className='circle-label' color={'#11ACFD'}></span> 12,230,000 UZS</div>
+                    <div className='total-value__item'><span className='circle-label' color={'#FCB600'}></span> 12,230,000 UZS</div>
+                    <div className='total-value__item'><span className='circle-label' color={'#8E007E'}></span> 12,230,000 UZS</div>
                 </TotalValue>
 
                 <CardContainerV>

@@ -317,17 +317,6 @@ const bgColorType = (color) => {
   }
 };
 
-const getSize = (fSize) => {
-  switch (fSize) {
-    case "16px":
-      return "16px";
-    case "20px":
-      return "20px";
-    default:
-      return "24px";
-  }
-};
-
 export const TotalValue = styled.div`
   display: flex;
   padding: 0 40px;
