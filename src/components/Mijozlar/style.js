@@ -67,7 +67,7 @@ export const CustomerItemWrapper = styled.div`
   }
 
   .status {
-    color: ${({ status }) => (status ? "#FA2738" : "#20D472")};
+    color: #20d472;
   }
 `;
 

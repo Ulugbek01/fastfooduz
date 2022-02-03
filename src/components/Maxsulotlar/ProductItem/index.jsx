@@ -8,9 +8,16 @@ const ProductItem = () => {
         <div>
             {data.map((value) => {
                 const {edit: Edit, delete: Delete} = value; 
+                /* delete function begin*/ 
                 const onDelete = (id)=> {
                     const newData = data.filter((value) => value.id !== id);
                     setData(newData);
+                }
+                /* delete function and*/
+
+                /* edit function begin*/
+                const onEdit = (id)=> {
+                    console.log(id);
                 }
                 return (
                     <Container key={value.id}>
@@ -23,7 +30,7 @@ const ProductItem = () => {
                         <Container.Additional>{value.additional}</Container.Additional>
                         <ActionContainer>
                             <IconWrapper>
-                                <Edit/>
+                                <Edit onClick={()=> onEdit(value.id)}/>
                             </IconWrapper>
                             <IconWrapper onClick={()=> onDelete(value.id)}>
                                 <Delete/>

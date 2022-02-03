@@ -1,9 +1,11 @@
 import React,{useState} from 'react'
 import Header from '../Header';
 import { customersInfo } from '../../utils/customersInfo';
+import {ReactComponent as Check} from '../../assets/icons/check.svg';
 import { ButtonItem, CustomerItemWrapper, IconWrapper, MainContainer, NavbarContainer } from './style';
 const Mijozlar = () => {
     const [cusInfo, setCusInfo] = useState(customersInfo);
+    const [icon, setIcon] = useState(true);
     return (
         <MainContainer>
             <Header text="Yangi mijoz"/>
@@ -20,24 +22,25 @@ const Mijozlar = () => {
                     const newData = cusInfo.filter((value) => value.id !== id);
                     setCusInfo(newData);
                 }
+
+                const onChange = ()=> {
+                    // setIcon(!icon ? <Slash/>: <Check/>);
+                }
                 return (
                     <CustomerItemWrapper key={item.id}>
                         <div>{item.name}</div>
                         <div>{item.phone}</div>
                         <div>{item.ordersCount}</div>
-                        <div status={item.status.toLowerCase() === 'block'} className='status'>{item.status}</div>
+                        <div className='status'>{item.status}</div>
                         <div>
-                            {item.status.toLowerCase() === 'aktiv' ? 
+                            { 
                             <div className='icon-wrapper'>
-                                <IconWrapper> <Slash/></IconWrapper>
+                                <IconWrapper onClick={onChange}><Slash/>
+                                </IconWrapper>
                                 <IconWrapper><Edit/></IconWrapper>
                                 <IconWrapper onClick={()=> onDelete(item.id)}><Delete/></IconWrapper>
                             </div>
-                            :<div className='icon-wrapper'>
-                                <IconWrapper> <Check/></IconWrapper>
-                                <IconWrapper><Edit/></IconWrapper>
-                                <IconWrapper onClick={()=> onDelete(item.id)}><Delete/></IconWrapper>
-                              </div>}
+                            }
                            
                         </div>
                 </CustomerItemWrapper>

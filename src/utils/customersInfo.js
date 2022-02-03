@@ -22,7 +22,7 @@ export const customersInfo = [
     status: "Block",
     edit: editIcon,
     delete: deleteIcon,
-    check: checkIcon,
+    slash: slashIcon,
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const customersInfo = [
     status: "Block",
     edit: editIcon,
     delete: deleteIcon,
-    check: checkIcon,
+    slash: slashIcon,
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const customersInfo = [
     status: "Block",
     edit: editIcon,
     delete: deleteIcon,
-    check: checkIcon,
+    slash: slashIcon,
   },
   {
     id: 6,
