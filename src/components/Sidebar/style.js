@@ -9,8 +9,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 300px;
+  height: 100vh;
   background-color: #fff;
   padding: 30px 24px 30px 0;
+  position: sticky;
+  top: 0;
 
   .nav-item {
     ${display_flex}
