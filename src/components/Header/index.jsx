@@ -11,11 +11,11 @@ const Header = (props) => {
                 <IconWrapper>
                     <Plus />
                 </IconWrapper>
-                <p className='title'>{props.text}<br /> qo’shish</p>
+                <p className='title'>{props.text}<br /> qo'shish</p>
             </AddProductWrapper>
             <SearchWrapper>
                 <div className='search-item_wrapper'>
-                    <SearchItem placeholder='Qidirish' />
+                    <SearchItem placeholder='Qidirish'/>
                     <Search className='search-icon' />
                 </div>
                 <FilterIconWrapper>

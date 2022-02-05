@@ -62,6 +62,8 @@ export const SearchItem = styled.input`
   border: none;
   outline: none;
   padding: 20px;
+  color: #2d3a45;
+  font-size: 14px;
 
   &::placeholder {
     opacity: 0.5;
